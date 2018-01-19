@@ -1,6 +1,6 @@
-email: lujooo@gmail.com
+email: huangmao.quan@dartmouth.edu
 fullname: 'Homer Quan'
-title: admin
+title: Administrator
 state: enabled
 access:
   admin:
@@ -8,4 +8,7 @@ access:
     super: true
   site:
     login: true
-hashed_password: $2y$10$x0PQyMtRzoNjkczrtdA5BebV4AkJXhQ6chVPni72RDfYPcP6A/IYm
+hashed_password: $2y$10$jsmpA0/SBxXlL2kvHmZJUekBAqecvOoKCmufIlheoB8IyLf1ABjSm
+language: en
+login_attempts: {  }
+twofa_secret: PBOD2R3NQYZWU6BKFP2GESHUBCOEYAPU

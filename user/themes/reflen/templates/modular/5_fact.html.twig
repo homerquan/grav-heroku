@@ -1,9 +1,0 @@
-<section id="fact" class="fact {{ section.style }} {{ cycle(['alt',''],loop.index) }}">
-    <div class="inner">
-        {{ section.body|markdown }}
-        {% include 'partials/features.html.twig' with { 'features': section.features } %}
-        <ul class="actions">
-            <li><a href="{{ section.button_url }}" class="button sr-only">{{ section.button_caption }}</a></li>
-        </ul>
-    </div>
-</section>
