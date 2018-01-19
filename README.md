@@ -1,5 +1,3 @@
-# Adding heroku profile. This code can deploy to heroku directly
-
 # ![](https://avatars1.githubusercontent.com/u/8237355?v=2&s=50) Grav
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/cfd20465-d0f8-4a0a-8444-467f5b5f16ad/mini.png)](https://insight.sensiolabs.com/projects/cfd20465-d0f8-4a0a-8444-467f5b5f16ad) [![Slack](https://grav-chat.now.sh/badge.svg)](https://chat.getgrav.org) [![Build Status](https://travis-ci.org/getgrav/grav.svg?branch=develop)](https://travis-ci.org/getgrav/grav) [![OpenCollective](https://opencollective.com/grav/backers/badge.svg)](#backers) [![OpenCollective](https://opencollective.com/grav/sponsors/badge.svg)](#sponsors)
@@ -88,7 +86,7 @@ $ bin/gpm update
 We appreciate any contribution to Grav, whether it is related to bugs, grammar, or simply a suggestion or improvement! Please refer to the [Contributing guide](CONTRIBUTING.md) for more guidance on this topic.
 
 ## Security issues
-If you discover a possible security issue related to Grav or one of its plugins, please send an email to the core team at contact@getgrav.org and we'll address it as soon as possible.
+If you discover a possible security issue related to Grav or one of its plugins, please email the core team at contact@getgrav.org and we'll address it as soon as possible.
 
 # Getting Started
 
@@ -103,9 +101,11 @@ If you discover a possible security issue related to Grav or one of its plugins,
 
 * Have a look at our [Basic Tutorial](https://learn.getgrav.org/basics/basic-tutorial)
 * Dive into more [advanced](https://learn.getgrav.org/advanced) functions
+* Learn about the [Grav CLI](https://learn.getgrav.org/cli-console/grav-cli)
+* Review examples in the [Grav Cookbook](https://learn.getgrav.org/cookbook)
 
 # Backers
-Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/grav#backer)]
+Support Grav with a monthly donation to help us continue development. [[Become a backer](https://opencollective.com/grav#backer)]
 
 <a href="https://opencollective.com/grav/backer/0/website" target="_blank"><img src="https://opencollective.com/grav/backer/0/avatar.svg"></a>
 <a href="https://opencollective.com/grav/backer/1/website" target="_blank"><img src="https://opencollective.com/grav/backer/1/avatar.svg"></a>

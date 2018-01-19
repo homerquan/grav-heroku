@@ -1,77 +1,81 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1507507866,
-    'checksum' => '69ec978850abbc358561ac6b3d4ac28e',
+    'timestamp' => 1516399016,
+    'checksum' => 'b9b06a0386f850469161de54ad1915d8',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
-                'modified' => 1507507671
+                'modified' => 1516398211
+            ],
+            'plugins/lightslider' => [
+                'file' => 'user/config/plugins/lightslider.yaml',
+                'modified' => 1516398211
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
-                'modified' => 1507507671
+                'modified' => 1516398211
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1506704302
+                'modified' => 1516398211
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
-                'modified' => 1507507671
+                'modified' => 1516398211
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1506704302
+                'modified' => 1516399012
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1506704302
+                'modified' => 1512550072
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1506704302
+                'modified' => 1512550072
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1506704302
+                'modified' => 1512550072
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1506704302
+                'modified' => 1512550072
             ]
         ],
         'user/plugins' => [
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
-                'modified' => 1506704302
+                'modified' => 1507503540
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1506704302
+                'modified' => 1516398211
             ],
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1506704302
+                'modified' => 1516399011
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1506704302
+                'modified' => 1516398211
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
-                'modified' => 1506704302
+                'modified' => 1516398211
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/login.yaml',
-                'modified' => 1506704302
+                'modified' => 1516398211
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1506704302
+                'modified' => 1516398211
             ]
         ]
     ],
@@ -94,10 +98,10 @@ return [
                 'files' => [
                     'multiple' => false,
                     'limit' => 10,
-                    'filesize' => 5,
                     'destination' => 'self@',
                     'avoid_overwriting' => false,
                     'random_name' => false,
+                    'filesize' => 0,
                     'accept' => [
                         0 => 'image/*'
                     ]
@@ -183,31 +187,9 @@ return [
                 'route_profile' => '/user_profile',
                 'route_register' => '/user_register',
                 'route_unauthorized' => '/user_unauthorized',
+                'dynamic_page_visibility' => false,
                 'parent_acl' => false,
                 'protect_protected_page_media' => false,
-                'user_registration' => [
-                    'enabled' => true,
-                    'fields' => [
-                        0 => 'username',
-                        1 => 'password',
-                        2 => 'email',
-                        3 => 'fullname',
-                        4 => 'title'
-                    ],
-                    'access' => [
-                        'site' => [
-                            'login' => 'true'
-                        ]
-                    ],
-                    'options' => [
-                        'validate_password1_and_password2' => true,
-                        'set_user_disabled' => false,
-                        'login_after_registration' => true,
-                        'send_activation_email' => false,
-                        'send_notification_email' => false,
-                        'send_welcome_email' => false
-                    ]
-                ],
                 'rememberme' => [
                     'enabled' => true,
                     'timeout' => 604800,
@@ -216,7 +198,35 @@ return [
                 'max_pw_resets_count' => 0,
                 'max_pw_resets_interval' => 60,
                 'max_login_count' => 0,
-                'max_login_interval' => 2
+                'max_login_interval' => 2,
+                'user_registration' => [
+                    'enabled' => true,
+                    'fields' => [
+                        0 => 'username',
+                        1 => 'password',
+                        2 => 'email',
+                        3 => 'fullname',
+                        4 => 'title',
+                        5 => 'level'
+                    ],
+                    'default_values' => [
+                        'level' => 'Newbie'
+                    ],
+                    'access' => [
+                        'site' => [
+                            'login' => 'true'
+                        ]
+                    ],
+                    'redirect_after_registration' => '',
+                    'options' => [
+                        'validate_password1_and_password2' => true,
+                        'set_user_disabled' => false,
+                        'login_after_registration' => true,
+                        'send_activation_email' => false,
+                        'send_notification_email' => false,
+                        'send_welcome_email' => false
+                    ]
+                ]
             ],
             'email' => [
                 'enabled' => true,
@@ -225,7 +235,7 @@ return [
                 'to' => NULL,
                 'to_name' => NULL,
                 'mailer' => [
-                    'engine' => 'mail',
+                    'engine' => 'sendmail',
                     'smtp' => [
                         'server' => 'localhost',
                         'port' => 25,
@@ -234,11 +244,39 @@ return [
                         'password' => ''
                     ],
                     'sendmail' => [
-                        'bin' => '/usr/sbin/sendmail'
+                        'bin' => '/usr/sbin/sendmail -bs'
                     ]
                 ],
                 'content_type' => 'text/html',
                 'debug' => false
+            ],
+            'lightslider' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'slider_type' => 'text',
+                'type_text_height' => 'auto',
+                'type_text_vertical_padding' => '80px',
+                'type_text_horizontal_padding' => '50px',
+                'type_text_brightness' => 0,
+                'item' => 1,
+                'slideMove' => 1,
+                'slideMargin' => 0,
+                'loop' => 'false',
+                'mode' => 'fade',
+                'controls' => 'true',
+                'keyPress' => 'true',
+                'auto' => 'false',
+                'pause' => 2000,
+                'speed' => 1000,
+                'pager' => 'true',
+                'gallery' => 'false',
+                'gallery_thumb_width' => 100,
+                'gallery_thumb_height' => 100,
+                'gallery_margin' => 15,
+                'gallery_thumb_margin' => 5,
+                'enableTouch' => 'true',
+                'enableDrag' => 'true',
+                'pauseOnHover' => 'false'
             ]
         ],
         'media' => [
@@ -508,18 +546,19 @@ return [
             ]
         ],
         'site' => [
-            'title' => 'Grav',
+            'title' => 'Understanding and Engaging with Augmented Intelligence | Reflen',
             'default_lang' => 'en',
             'author' => [
-                'name' => 'Joe Bloggs',
-                'email' => 'joe@test.com'
+                'name' => 'Homer Quan',
+                'email' => 'contact@reflen.com'
             ],
             'taxonomies' => [
                 0 => 'category',
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+                'description' => 'Reflen or "reflective learning", means machines and humans learning from each other. Our products help to understand and engage online users in real-time by collaborating human and machine intelligence.',
+                'keywords' => 'Real-time, customer engagement, software, cognitive computing, machine learning, augmented intelligence'
             ],
             'summary' => [
                 'enabled' => true,
@@ -531,6 +570,11 @@ return [
             'routes' => NULL,
             'blog' => [
                 'route' => '/blog'
+            ],
+            'header' => [
+                'logo' => 'user/themes/reflen/assets/imgs/logo.png',
+                'logo_text' => 'user/themes/reflen/assets/imgs/logo-text.png',
+                'menu_name' => 'MENU'
             ]
         ],
         'streams' => [
@@ -564,9 +608,11 @@ return [
             'wrapped_site' => false,
             'reverse_proxy_setup' => false,
             'force_ssl' => false,
+            'force_lowercase_urls' => true,
             'custom_base_url' => '',
             'username_regex' => '^[a-z0-9_-]{3,16}$',
             'pwd_regex' => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
+            'intl_enabled' => true,
             'languages' => [
                 'supported' => [
                     
@@ -583,7 +629,7 @@ return [
                 'hide_in_urls' => false
             ],
             'pages' => [
-                'theme' => 'antimatter',
+                'theme' => 'reflen',
                 'order' => [
                     'by' => 'default',
                     'dir' => 'asc'
@@ -650,7 +696,8 @@ return [
                         0 => 'form',
                         1 => 'forms'
                     ]
-                ]
+                ],
+                'markdown_extra' => false
             ],
             'cache' => [
                 'enabled' => true,
@@ -694,7 +741,7 @@ return [
                 ]
             ],
             'errors' => [
-                'display' => true,
+                'display' => 0,
                 'log' => true
             ],
             'debugger' => [
@@ -713,14 +760,14 @@ return [
             ],
             'media' => [
                 'enable_media_timestamp' => false,
-                'upload_limit' => 0,
                 'unsupported_inline_types' => [
                     
                 ],
                 'allowed_fallback_types' => [
                     
                 ],
-                'auto_metadata_exif' => false
+                'auto_metadata_exif' => false,
+                'upload_limit' => 2097152
             ],
             'session' => [
                 'enabled' => true,
@@ -740,7 +787,7 @@ return [
             ]
         ],
         'security' => [
-            'salt' => 'mz3BROduPDYtvr'
+            'salt' => 'MH9KNpqa0wiXzW'
         ]
     ]
 ];
