@@ -1,0 +1,19 @@
+<!-- Wrapper -->
+<section id="wrapper">
+{% for name, section in page.header.sections %}
+    <section id="{{ name }}" class="wrapper spotlight {{ section.style }} {{ cycle(['alt',''],loop.index) }}">
+        <div class="inner">
+            <a href="#" class="image">
+            <span class="image-cover">
+            {{ page.media.images[section.image] }}
+            </span>
+            </a>
+            <div class="content">
+                <h2>{{ section.title }}</h2>
+                {{ section.body|markdown }}
+                <a href="#" class="special convospot_click"  data-convospot-intention="learn more about product" ontap="showConvospot()" onclick="showConvospot()">{{ section.button_caption }}</a>
+            </div>
+        </div>
+    </section> 
+{% endfor %}
+</section>

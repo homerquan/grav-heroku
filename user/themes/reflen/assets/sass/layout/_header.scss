@@ -1,0 +1,180 @@
+///
+/// Solid State by HTML5 UP
+/// html5up.net | @n33co
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Header */
+
+#header {
+    @include vendor("transition", "background-color #{_duration(transition)} ease-in-out");
+    background-color: transparentize(
+        desaturate(lighten(_palette(bg), 3), 1.5),
+        0.05
+    );
+    height: 80px;
+    left: 0;
+    line-height: 3.5em;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: _misc(z-index-base);
+    .logo {
+        @include vendor("transition", ( "opacity #{_duration(transition)} ease-in-out", "visibility #{_duration(transition)}"));
+        border-bottom: 0;
+        font-size: 0.8em;
+        margin-bottom: 0;
+        margin-top: 18px;
+        margin-left: 20px;
+        opacity: 1;
+        visibility: visible;
+        text-align: left;
+        width: 250px;
+        a {
+            border: 0;
+            font-size: 200%;
+            img {
+                margin-right: 5px;
+                vertical-align: top;
+            }
+        }
+        .logo-symbol {
+            width: 40px;
+        }
+        .logo-text {
+            width: 120px;
+            margin-top: 5px;
+        }
+    }
+    nav {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.6em;
+        font-weight: 400;
+        height: 100%;
+        letter-spacing: 1px;
+        line-height: 2.5em;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding-left: 200px;
+        text-align: left;
+        z-index: -1;
+        a.nav-toggle {
+            text-decoration: none;
+            text-indent: 300px;
+            position: relative;
+            overflow: hidden;
+            width: 80px;
+            height: 80px;
+            float: right;
+        }
+        a.nav-toggle:before {
+            color: _palette(fg-dark);
+            font: normal 32px/80px "FontAwesome";
+            text-transform: none;
+            text-align: right;
+            position: absolute;
+            content: "\f0c9";
+            text-indent: 0;
+            speak: none;
+            width: 100%;
+            right: 25px;
+            top: 0;
+        }
+        a.nav-toggle.active:before {
+            content: "\f00d";
+        }
+        ul {
+            width: 100%;
+        }
+        ul li {
+            display: inline-block;
+            list-style: none;
+            width: auto;
+            a.small {
+                font-size: 18px;
+                font-family: Roboto, sans-serif;
+            }
+            a.has-border {
+                border: solid 2px _palette(fg-bold);
+                border-radius: 5px;
+                padding: 5px 1em;
+                color: _palette(fg-bold);
+            }
+            a {
+                border: 0;
+                padding: 0 5px;
+                color: _palette(fg-dark);
+                &:before {
+                    float: right;
+                    margin-left: 0.75em;
+                }
+                &[href="#menu"] {
+                    @include icon;
+                    @include vendor("transition", "background-color #{_duration(transition)} ease-in-out");
+                    color: _palette(control);
+                    border-radius: _size(border-radius);
+                    padding: 0 10px;
+                    &:hover {
+                        background-color: _palette(border-bg);
+                    }
+                    &:active {
+                        background-color: _palette(border2-bg);
+                    }
+                }
+            }
+            a.rev {
+                color: white;
+                background: _palette(fg-bold);
+                border-radius: 5px;
+                padding: 5px 1em;
+            }
+            a.rev:hover {
+                background: _palette(fg-light);
+            }
+            &.end {
+                margin-right: 25px;
+                float: right;
+            }
+        }
+        .sep-txt {
+            font-size: 14px;
+            color: _palette(fg-light);
+        }
+    }
+    @include breakpoint(medium) {
+        .logo-text {
+           display: none;
+        }
+        nav {
+           padding-left: 50px;
+        }
+    }
+    @include breakpoint(small) {
+        nav {
+           padding-left: 50px;
+           ul li.end {
+            margin-right: auto;
+            float: left;
+           }
+        }
+       
+    }
+}
+
+.js-nav-active #header {
+    .nav-collapse {
+        text-align: left;
+        background: rgba(255, 255, 255, 0.952941);
+    }
+    ul li {
+        display: block;
+    }
+    a.small {
+        font-size: 75%;
+    }
+    .sep-txt {
+        font-size: 75%;
+    }
+}

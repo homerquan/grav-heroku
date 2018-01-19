@@ -1,7 +1,12 @@
-title: Grav
+title:  'Understanding and Engaging with Augmented Intelligence | Reflen'
+header:
+  logo: 'user/themes/reflen/assets/imgs/logo.png'
+  logo_text: 'user/themes/reflen/assets/imgs/logo-text.png'
+  menu_name: 'MENU'
 author:
-  name: Joe Bloggs
-  email: 'joe@test.com'
+  name: Homer Quan
+  email: 'contact@reflen.com'
 metadata:
-    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+    description: 'Reflen or "reflective learning", means machines and humans learning from each other. Our products help to understand and engage online users in real-time by collaborating human and machine intelligence.'
+    keywords: 'Real-time, customer engagement, software, cognitive computing, machine learning, augmented intelligence'
 

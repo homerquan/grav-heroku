@@ -1,0 +1,132 @@
+///
+/// Solid State by HTML5 UP
+/// html5up.net | @n33co
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Footer */
+
+#footer {
+    border-top: 1px solid _palette(border);
+    background-color: white;
+    h3 {
+        font-weight: 600;
+    }
+    .map {
+        ul {
+            padding: 0;
+            list-style: none;
+            li {
+                font-size: 0.8em;
+                padding: 0;
+                color: #999;
+                text-decoration: none;
+                a {
+                    color: #999;
+                }
+            }
+        }
+        .talk {
+            border: solid 2px;
+        }
+        .email {
+            height: 2.85em;
+        }
+        .subscribe {
+            padding-left: 5px;
+        }
+    }
+    .claim {
+        background: _palette(bg-light);
+        text-align: center;
+        .inner {
+            padding: 1em 0;
+        }
+    }
+    ul.copyright {
+        list-style: none;
+        padding: 0 1em;
+        width: 100%;
+        margin: 0;
+        li {
+            display: inline-block;
+            color: #9E9EA6;
+            font-size: 0.8em;
+            line-height: 1;
+            margin-left: 1em;
+            padding: 0;
+            padding-left: 1em;
+            &:first-child {
+                border-left: 0;
+                margin-left: 0;
+                padding-left: 0;
+            }
+            a {
+                color: inherit;
+            }
+        }
+    }
+    .social {
+        margin: 0;
+        li {
+            display: inline-block;
+            a {
+                font-size: 16px;
+                border: none;
+                color: _palette(fg-light);
+            }
+        }
+    }
+    .inner {
+        @include padding(3em, 0);
+        @include vendor('display', 'flex');
+        @include vendor('flex-direction', 'row');
+        @include vendor('flex-wrap', 'wrap');
+        margin: 0 auto;
+        width: _size(inner);
+        > * {
+            width: 100%;
+        }
+        h2 {
+            color: _palette(fg-light);
+        }
+        .contact {
+            width: calc(50% - #{_size(section-spacing, large) * 0.5});
+        }
+    }
+    @include breakpoint(large) {
+        background-size: auto, cover;
+        background-position: center, center;   
+    }
+    @include breakpoint(medium) {
+        .inner {
+            @include padding(3em, 3em);
+            display: block;
+            width: 100%;
+            form {
+                width: 100%;
+                margin: 0 0 (_size(element-margin) * 2) 0;
+            }
+            .contact {
+                width: 100%;
+                margin: 0 0 (_size(element-margin) * 2) 0;
+            }
+            .copyright {
+                margin: (_size(element-margin) * 2) 0 _size(element-margin) 0;
+            }
+        }
+    }
+    @include breakpoint(small) {
+        margin-top: (_size(wrapper-edges, small) * -1);
+        padding-top: _size(wrapper-edges, small);
+        .inner {
+            @include padding(2em, 2em);
+            form {
+                margin: 0 0 (_size(element-margin) * 1.5) 0;
+            }
+            .contact {
+                margin: 0 0 (_size(element-margin) * 1.5) 0;
+            }
+        }
+    }
+}
