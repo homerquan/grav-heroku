@@ -1,0 +1,11 @@
+email: lujooo@gmail.com
+fullname: 'Homer Quan'
+title: admin
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$x0PQyMtRzoNjkczrtdA5BebV4AkJXhQ6chVPni72RDfYPcP6A/IYm
